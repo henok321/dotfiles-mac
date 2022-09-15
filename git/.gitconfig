@@ -1,0 +1,49 @@
+[user]
+	name = Hendrik Brinkmann
+	email = github@henok.eu
+	signingkey = 0E26A35CD605761C549597B2599B7662EC440363
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	editor = vim
+[push]
+	default = simple
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[mergetool]
+	keepBackup = false
+[merge]
+  tool = meld
+[mergetool "meld"]
+  #cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[diff]
+  submodule = log
+  tool = meld
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main 
+[gpg]
+	program = gpg2
+[difftools]
+  prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
+[pull]
+	rebase = true
+[commit]
+	gpgSign = true
+[cola]
+	spellcheck = false
+[init]
+	defaultBranch = main
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
+[url "git@github.sipgate.net:"]
+	insteadOf = https://github.sipgate.net
