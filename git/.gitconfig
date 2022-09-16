@@ -1,6 +1,6 @@
 [user]
 	name = Hendrik Brinkmann
-	email = github@henok.eu
+	email = brinkmann@sipgate.de
 	signingkey = 0E26A35CD605761C549597B2599B7662EC440363
 [core]
 	excludesfile = ~/.gitignore_global
