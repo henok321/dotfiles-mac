@@ -1,20 +1,20 @@
 [user]
-	name = Hendrik Brinkmann
-	email = brinkmann@sipgate.de
-	signingkey = 0E26A35CD605761C549597B2599B7662EC440363
+  name = Hendrik Brinkmann
+  email = brinkmann@sipgate.de
+  signingkey = 0E26A35CD605761C549597B2599B7662EC440363
 [core]
-	excludesfile = ~/.gitignore_global
-	autocrlf = input
-	editor = vim
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+  editor = vim
 [push]
-	default = simple
+  default = simple
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [mergetool]
-	keepBackup = false
+  keepBackup = false
 [merge]
   tool = meld
 [mergetool "meld"]

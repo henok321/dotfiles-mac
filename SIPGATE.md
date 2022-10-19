@@ -17,8 +17,8 @@ Add following lines to `$HOME/.ssh/config`:
 ```bash
 # sipgate.net
 Host *
-  User {LDAP_USER}
-  GSSAPIAuthentication yes
+User {LDAP_USER}
+GSSAPIAuthentication yes
 ```
 
 ### Cert authority
