@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages pip pipenv mvn docker docker-compose gitignore nvm yarn sdk golang thefuck fzf)
+plugins=(git colored-man-pages pip pipenv mvn docker docker-compose gitignore nvm yarn sdk golang thefuck fzf rust listbox)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,6 +99,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# web-apps commits with listbox 
+
+web-apps-commit() {
+scope=$(listbox -t 'Scope des Commits auswählen' -a '→' -o "all|shared|app-web|pandaUI" | tee /dev/tty | tail -n 1)
+type=$(listbox -t 'Art des Commits auswählen' -a '→' -o "feat|fix|docs|visual|refactor|test|chore|WIP" | tee /dev/tty | tail -n 1)
+message=$1
+message="$(tr '[:lower:]' '[:upper:]' <<< ${message:0:1})${message:1}"
+
+git commit -m "[$scope] $type: $message"
+}
+
 
 # Ansible 
 ANSIBLE_VAULT_PASSWORD_FILE=$HOME/vault-password-client.sh
