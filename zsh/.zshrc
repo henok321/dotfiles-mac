@@ -67,10 +67,10 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plu$gins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages pip pipenv mvn docker docker-compose gitignore nvm yarn sdk golang thefuck fzf rust listbox)
+plugins=(git colored-man-pages pip pipenv mvn gradle docker docker-compose gitignore nvm yarn sdk golang thefuck fzf rust listbox)
 
 source $ZSH/oh-my-zsh.sh
 
