@@ -8,6 +8,7 @@
   editor = vim
 [push]
   default = simple
+  autoSetupRemote = true
 [filter "lfs"]
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
@@ -39,6 +40,7 @@
 	rebase = true
 [commit]
 	gpgSign = true
+	template = /Users/brinkmann/.gitmessage
 [cola]
 	spellcheck = false
 [init]
