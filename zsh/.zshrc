@@ -100,25 +100,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# web-apps commits with listbox 
+# web-apps commits with listbox
 
 web-apps-commit() {
-scope=$(listbox -t 'Scope des Commits auswählen' -a '→' -o "all|shared|app-web|pandaUI" | tee /dev/tty | tail -n 1)
-type=$(listbox -t 'Art des Commits auswählen' -a '→' -o "feat|fix|docs|visual|refactor|test|chore|WIP" | tee /dev/tty | tail -n 1)
-message=$1
-message="$(tr '[:lower:]' '[:upper:]' <<< ${message:0:1})${message:1}"
+    scope=$(listbox -t 'Scope des Commits auswählen' -a '→' -o "all|shared|app-web|pandaUI" | tee /dev/tty | tail -n 1)
+    type=$(listbox -t 'Art des Commits auswählen' -a '→' -o "feat|fix|docs|visual|refactor|test|chore|WIP" | tee /dev/tty | tail -n 1)
+    message=$1
+    message="$(tr '[:lower:]' '[:upper:]' <<<${message:0:1})${message:1}"
 
-git commit -m "[$scope] $type: $message"
+    git commit -m "[$scope] $type: $message"
 }
 
-
-# Ansible 
+# Ansible
 ANSIBLE_VAULT_PASSWORD_FILE=$HOME/vault-password-client.sh
 
 # Default editor
 export EDITOR=vi
 
-# GPG config 
+# GPG config
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent
 
@@ -127,5 +126,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
