@@ -7,7 +7,7 @@ brew install ansible pinentry z htop ncurses ripgrep stow httpie thefuck vim ca-
 ```
 
 ```bash
-brew install --cask 1password datagrip firefox intellij-idea phpstorm rustdesk spotify whatsapp 1password-cli discord google-chrome iterm2 postman slack visual-studio-code
+brew install --cask 1password spotify whatsapp 1password-cli discord iterm2 postman visual-studio-code
 ```
 
 ## Dotfiles
