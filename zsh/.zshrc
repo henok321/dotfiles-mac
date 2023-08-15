@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+export ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,9 +70,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plu$gins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages pip pipenv mvn gradle docker docker-compose gitignore nvm yarn sdk golang thefuck fzf rust listbox)
+export plugins=(git colored-man-pages pip pipenv mvn gradle docker docker-compose gitignore nvm yarn sdk golang thefuck fzf rust listbox)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -112,13 +112,15 @@ web-apps-commit() {
 }
 
 # Ansible
-ANSIBLE_VAULT_PASSWORD_FILE=$HOME/vault-password-client.sh
+export ANSIBLE_VAULT_PASSWORD_FILE=$HOME/vault-password-client.sh
 
 # Default editor
 export EDITOR=vi
 
 # GPG config
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
+
 gpgconf --launch gpg-agent
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
