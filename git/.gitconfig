@@ -50,4 +50,4 @@
 [url "git@github.sipgate.net:"]
 	insteadOf = https://github.sipgate.net
 [git-mob-config]
-	github-fetch = true
+	github-fetch = false
