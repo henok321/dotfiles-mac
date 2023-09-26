@@ -106,13 +106,13 @@ web-apps-commit() {
     scope=$(listbox -t 'Scope des Commits auswählen' -a '→' -o "all|shared|app-web|pandaUI" | tee /dev/tty | tail -n 1)
     type=$(listbox -t 'Art des Commits auswählen' -a '→' -o "feat|fix|docs|visual|refactor|test|chore|WIP" | tee /dev/tty | tail -n 1)
     message=$1
-    message="$(tr '[:lower:]' '[:upper:]' <<<${message:0:1})${message:1}"
+    message="$(tr '[:lower:]' '[:upper:]' <<<"${message:0:1}")${message:1}"
 
     git commit -m "[$scope] $type: $message"
 }
 
 killport() {
-    kill -9 $(lsof -i tcp:$1 | tail -1 | awk '{ print $2;}')
+    kill -9 "$(lsof -i tcp:"$1" | tail -1 | awk '{ print $2;}')"
 }
 
 # Ansible
