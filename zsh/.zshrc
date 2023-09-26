@@ -111,6 +111,10 @@ web-apps-commit() {
     git commit -m "[$scope] $type: $message"
 }
 
+killport() {
+    kill -9 $(lsof -i tcp:$1 | tail -1 | awk '{ print $2;}')
+}
+
 # Ansible
 export ANSIBLE_VAULT_PASSWORD_FILE=$HOME/vault-password-client.sh
 
